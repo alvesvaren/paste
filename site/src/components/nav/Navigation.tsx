@@ -13,7 +13,7 @@ class Navigation extends Component<NavigationProps, NavigationState> {
     constructor(props: NavigationProps) {
         super(props);
 
-        const theme = window.localStorage.getItem("theme");
+        const theme = window.escape(window.localStorage.getItem("theme") || ""); // The localStorage can't be trusted
         if (!Array.from(document.body.classList).some((item) => item.startsWith("theme-")) && theme) {
             document.body.classList.add("theme-" + theme);
         }
@@ -38,10 +38,12 @@ class Navigation extends Component<NavigationProps, NavigationState> {
                                 defaultValue={this.state.defaultTheme || undefined}
                                 onChange={(event) => {
                                     document.body.classList.forEach((item) => {
+                                        
                                         if (item.startsWith("theme-")) document.body.classList.remove(item);
                                     });
-                                    document.body.classList.add("theme-" + event.currentTarget.value);
-                                    window.localStorage.setItem("theme", event.currentTarget.value);
+                                    const new_item = window.escape(event.currentTarget.value);
+                                    document.body.classList.add("theme-" + new_item);
+                                    window.localStorage.setItem("theme", new_item);
                                 }}
                             >
                                 {themes.map((theme, i) => (
