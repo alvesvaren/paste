@@ -1,0 +1,11 @@
+@mixin code-reset {
+    --code-default: unset;
+    --code-background: unset;
+    --code-keyword: unset;
+    --code-class: unset;
+    --code-title: unset;
+    --code-string: unset;
+    --code-comment: unset;
+    --code-number: unset;
+    --code-important: unset;
+}

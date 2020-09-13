@@ -1,0 +1,149 @@
+@import "themes/dracula.scss";
+@import "themes/monokai.scss";
+@import "themes/solarized.scss";
+@import "themes/atom_one.scss";
+
+body,
+body.theme-dark {
+    // Default variables
+    --background: #1c1f26;
+    --accent: #5294e2;
+    --color: #f2f2f2;
+    --accent-text: --color;
+    --code-default: var(--color);
+    --code-background: var(--background);
+    --code-keyword: #ce93d8;
+    --code-class: #4ec9b0;
+    --code-title: var(--accent);
+    --code-string: #ad8b78;
+    --code-comment: #757882;
+    --code-number: #84b00a;
+    --code-important: unset;
+
+    background-color: var(--background);
+    color: var(--color);
+
+    font-size: 16px;
+    font-weight: 600;
+}
+nav {
+    ul {
+        padding: 15px;
+        list-style-type: none;
+        margin: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+
+        li {
+            display: flex;
+        }
+    }
+}
+
+select {
+    appearance: none;
+    color: var(--color);
+    background-color: transparent;
+    border-color: var(--accent);
+    border-style: solid;
+    border-radius: 4px;
+    padding: 5px;
+    margin-left: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    height: 39px;
+    box-sizing: border-box;
+}
+
+a.button {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    background-color: var(--accent);
+    color: var(--accent-text);
+    border-radius: 4px;
+    height: 39px;
+    box-sizing: border-box;
+}
+
+select,
+a.button {
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background-color: var(--code-background);
+}
+
+.hljs-built_in,
+.hljs-selector-tag,
+.hljs-section,
+.hljs-link {
+    color: var(--code-class);
+}
+
+.hljs-keyword {
+    color: var(--code-keyword);
+}
+
+.hljs,
+.hljs-subst {
+    color: var(--code-default);
+}
+
+.hljs-title {
+    color: var(--code-title);
+}
+
+.hljs-string,
+.hljs-meta,
+.hljs-name,
+.hljs-type,
+.hljs-attr,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+    color: var(--code-string);
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion {
+    color: var(--code-comment);
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-title,
+.hljs-section,
+.hljs-doctag,
+.hljs-type,
+.hljs-name,
+.hljs-strong {
+    font-weight: bold;
+}
+
+.hljs-literal,
+.hljs-number {
+    color: var(--code-number);
+}
+
+.hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-emphasis, .hljs-strong {
+    color: var(--code-important);
+}
