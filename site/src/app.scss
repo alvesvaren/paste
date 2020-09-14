@@ -2,6 +2,7 @@
 @import "themes/monokai.scss";
 @import "themes/solarized.scss";
 @import "themes/atom_one.scss";
+@import "themes/nord.scss";
 
 body,
 body.theme-dark {
@@ -56,6 +57,7 @@ select {
     font-weight: 600;
     height: 39px;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 a.button {

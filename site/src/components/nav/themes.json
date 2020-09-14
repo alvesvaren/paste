@@ -1,9 +1,10 @@
 [
-    { "id": "dark", "name": "Dark (default)" },
+    { "id": "arc-dark", "name": "Arc Dark (default)" },
+    { "id": "atom-one-dark", "name": "Atom One Dark" },
     { "id": "dracula", "name": "Dracula" },
     { "id": "monokai", "name": "Monokai" },
+    { "id": "nord", "name": "Nord" },
     { "id": "solarized-dark", "name": "Solarized Dark" },
-    { "id": "solarized-light", "name": "Solarized Light" },
-    { "id": "atom-one-dark", "name": "Atom One Dark" },
-    { "id": "atom-one-light", "name": "Atom One Light" }
+    { "id": "atom-one-light", "name": "Atom One Light" },
+    { "id": "solarized-light", "name": "Solarized Light" }
 ]
