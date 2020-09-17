@@ -6,6 +6,7 @@ body.theme-atom-one-dark {
     --color: #e0e8f8;
     --background: #282c34;
     --accent: #c678dd;
+    --overlay: white;
     .hljs {
         display: block;
         overflow-x: auto;
@@ -88,6 +89,7 @@ body.theme-atom-one-light {
     --color: #1e1f24;
     --accent: #d85cd6;
     --background: #fafafa;
+    --overlay: black;
     .hljs {
         display: block;
         overflow-x: auto;

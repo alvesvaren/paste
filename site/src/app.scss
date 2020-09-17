@@ -3,13 +3,16 @@
 @import "themes/solarized.scss";
 @import "themes/atom_one.scss";
 @import "themes/nord.scss";
+$dark: 1;
 
 body,
 body.theme-dark {
+    $dark: 1;
     // Default variables
     --background: #1c1f26;
     --accent: #5294e2;
     --color: #f2f2f2;
+
     --accent-text: --color;
     --code-default: var(--color);
     --code-background: var(--background);
@@ -26,7 +29,70 @@ body.theme-dark {
 
     font-size: 16px;
     font-weight: 600;
+
+    
 }
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--accent), 0.2) transparent;
+}
+
+.create-root {
+    box-sizing: border-box;
+}
+.create-wrapper {
+    width: 100vw;
+    position: relative;
+    resize: vertical;
+
+    min-height: 250px;
+    pre code,
+    #code-enter-field {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+        border: 0;
+        padding: 0;
+        word-wrap: normal;
+
+        min-height: 750px;
+
+        font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+        padding: 0.5em;
+    }
+
+    #code-enter-field {
+        transition-duration: 250ms;
+        transition-property: background-color;
+        box-sizing: border-box;
+        z-index: 0;
+        width: 100%;
+        resize: none;
+        color: white;
+        background-color: transparent;
+        &:hover, &:focus {
+            @if ($dark == 1) {
+                background-color: #fff1;
+            }
+            @else {
+                background-color: #0001;
+            }
+        }
+    }
+
+    pre code {
+        pointer-events: none;
+        overflow-x: visible;
+
+        // z-index: 1;
+        background-color: transparent !important;
+    }
+}
+
 nav {
     ul {
         padding: 15px;
@@ -146,6 +212,7 @@ a.button {
     font-style: italic;
 }
 
-.hljs-emphasis, .hljs-strong {
+.hljs-emphasis,
+.hljs-strong {
     color: var(--code-important);
 }

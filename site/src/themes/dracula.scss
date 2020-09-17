@@ -1,3 +1,5 @@
+@import "reset.scss";
+
 /* Dracula Theme v1.2.5
  *
  * https://github.com/dracula/highlightjs
@@ -15,12 +17,7 @@ body.theme-dracula {
     --color: #f8f8f2;
     --accent: #50fa7b;
     --accent-text: #000;
-
-    --code-class: #8be9fd;
-    --code-keyword: #ff79c6;
-    --code-string: #f1fa8c;
-    --code-comment: #6272a4;
-    --code-number: #bd93f9;
+    --overlay: white;
 
     .hljs {
         display: block;
