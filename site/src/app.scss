@@ -31,10 +31,6 @@ body.theme-dark {
     font-weight: 600;
 }
 
-* {
-    // scrollbar-color: transparent;
-}
-
 .create-root {
     box-sizing: border-box;
 }
@@ -54,7 +50,7 @@ body.theme-dark {
         margin: 0;
         border: 0;
         padding: 0;
-        word-wrap: normal;
+        word-break: break-all;
         min-height: 750px;
 
         font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -98,7 +94,7 @@ body.theme-dark {
 
     pre {
         white-space: pre-wrap;
-        // word-break: keep-all;
+        word-break: break-all;
     }
 }
 
