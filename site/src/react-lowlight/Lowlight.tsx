@@ -18,7 +18,8 @@ export interface LowlightProps {
     inline?: boolean;
     markers?: number[] | LowlightMarker[];
     className?: string;
-    xScrollValue?: number;
+    codeElementRef?: React.Ref<HTMLElement>;
+    onLang?: (lang: string) => any;
 }
 
 interface CodeProps {
@@ -63,7 +64,7 @@ class Lowlight extends Component<LowlightProps> {
 
         var value = ast.length === 0 ? this.props.value : ast.map(mapWithDepth(0));
 
-    const code = <code {...codeProps}>{value}</code>;
+    const code = <code ref={this.props.codeElementRef} {...codeProps}>{value}</code>;
         if (this.props.inline) {
             return code;
         }

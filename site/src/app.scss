@@ -29,13 +29,10 @@ body.theme-dark {
 
     font-size: 16px;
     font-weight: 600;
-
-    
 }
 
 * {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(var(--accent), 0.2) transparent;
+    // scrollbar-color: transparent;
 }
 
 .create-root {
@@ -58,7 +55,6 @@ body.theme-dark {
         border: 0;
         padding: 0;
         word-wrap: normal;
-
         min-height: 750px;
 
         font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -72,24 +68,37 @@ body.theme-dark {
         z-index: 0;
         width: 100%;
         resize: none;
-        color: white;
+        color: transparent;
+        caret-color: white;
+        // white-space: pre;
         background-color: transparent;
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             @if ($dark == 1) {
                 background-color: #fff1;
-            }
-            @else {
+            } @else {
                 background-color: #0001;
             }
         }
+
+        &::placeholder {
+            color: #fff8;
+        }
+
+        overflow-wrap: none;
     }
 
     pre code {
         pointer-events: none;
-        overflow-x: visible;
+        // overflow-wrap: break-word;
 
         // z-index: 1;
         background-color: transparent !important;
+    }
+
+    pre {
+        white-space: pre-wrap;
+        // word-break: keep-all;
     }
 }
 
