@@ -30,10 +30,6 @@ interface CodeProps {
 class Lowlight extends Component<LowlightProps> {
     static registeredLanguages = 0;
 
-    constructor(props: LowlightProps) {
-        super(props);
-    }
-
     static registerLanguage(name: string, syntax: ((hljs?: HLJSApi) => Language)) {
         this.registeredLanguages++;
         low.registerLanguage.apply(low, [name, syntax])
@@ -42,7 +38,7 @@ class Lowlight extends Component<LowlightProps> {
     render() {
         if (process.env.NODE_ENV !== "production") {
             if (!this.props.language && Lowlight.registeredLanguages === 0) {
-                console.warn("No language definitions seems to be registered, " + "did you forget to call `Lowlight.registerLanguage`?");
+                console.warn("No language definitions seems to be registered, did you forget to call `Lowlight.registerLanguage`?");
             }
         }
         console.log("test");

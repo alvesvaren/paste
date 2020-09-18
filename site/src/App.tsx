@@ -14,7 +14,7 @@ class App extends React.Component<AppProps, AppState> {
     constructor(props: AppProps) {
         super(props);
         this.state = {};
-        highlightjs.listLanguages().map((lang) => {
+        highlightjs.listLanguages().forEach((lang) => {
             const langObj = highlightjs.getLanguage(lang);
             if (langObj && langObj.rawDefinition)
             Lowlight.registerLanguage(lang, langObj.rawDefinition);

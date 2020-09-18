@@ -1,8 +1,6 @@
 import * as React from "react";
 import { Component } from "react";
-import lowlight from "lowlight";
 import Lowlight from "react-lowlight";
-import highlight from "highlight.js";
 
 export interface ViewRouteProps {}
 
