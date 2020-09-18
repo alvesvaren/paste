@@ -10,13 +10,11 @@ export interface CreateRouteState {
 }
 
 class CreateRoute extends Component<CreateRouteProps, CreateRouteState> {
-
     codeRef = React.createRef<HTMLElement>();
 
     constructor(props: CreateRouteProps) {
         super(props);
         this.state = { code: "", xScroll: 0 };
-        
     }
     render() {
         return (
@@ -26,6 +24,9 @@ class CreateRoute extends Component<CreateRouteProps, CreateRouteState> {
                         id="code-enter-field"
                         wrap="soft"
                         placeholder="Enter text here..."
+                        autoComplete="off"
+                        autoCorrect="off"
+                        autoCapitalize="off"
                         spellCheck="false"
                         onScrollCapture={(e) => {
                             // this.setState({ xScroll: e.currentTarget.scrollLeft });
@@ -34,11 +35,11 @@ class CreateRoute extends Component<CreateRouteProps, CreateRouteState> {
                             }
                         }}
                         onChangeCapture={(e) => {
-                            e.currentTarget.style.height = e.currentTarget.scrollHeight+'px';
+                            e.currentTarget.style.height = e.currentTarget.scrollHeight + "px";
                             if (this.codeRef.current) {
                                 this.codeRef.current.style.height = e.currentTarget.style.height;
                             }
-                            
+
                             this.setState({ code: e.currentTarget.value });
                         }}
                     />
